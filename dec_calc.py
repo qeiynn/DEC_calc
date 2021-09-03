@@ -48,7 +48,7 @@ def Price():
     a=requests.get("https://api.coingecko.com/api/v3/simple/price?ids=dark-energy-crystals%2Csplinterlands&vs_currencies=usd%2Cusd").json()
     DEC_Price.configure(text=str(a['dark-energy-crystals']['usd'])+" $")
     SPS_Price.configure(text=str(a['splinterlands']['usd'])+" $")
-    gui.after(15000,Price) # coingecko max 150 queries per minute 
+    gui.after(15000,Price)
     print("refreshed at {}  ".format(str(ctime())))
 
 DEC=tk.Label(gui,text="DEC", fg='light blue', bg='black', font='helvetica 12 bold')
